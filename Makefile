@@ -1,5 +1,5 @@
 # Define the target file name
-TARGET = blink_interrupt
+TARGET = blink
 
 # Specify the MCU and clock frequency
 MCU = atmega328p

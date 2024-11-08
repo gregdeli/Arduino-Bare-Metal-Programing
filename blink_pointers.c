@@ -6,13 +6,17 @@ int main(void){
 
     while(1){
         PORTB |= (1<<PORTB5);
+        //volatile uint8_t* portb = 0x25;
+        //*portb |= (1<<PORTB5);
+        //*(volatile uint8_t*)0x25 |= (1<<PORTB5);
+
 
         _delay_ms(1000);
 
         PORTB &= ~(1<<PORTB5);
+        //*portb &= ~(1<<PORTB5);
+        //*(volatile uint8_t*)0x25 &= ~(1<<PORTB5);
 
         _delay_ms(1000);
     }
-
-    return 0;
 }

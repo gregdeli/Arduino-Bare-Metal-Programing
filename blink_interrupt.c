@@ -16,7 +16,7 @@ int main(void){
     // Global interrupt enable
     sei();
 
-    initTimer1(4000);
+    initTimer1(500);
 
     while(1){
         // Do nothing
