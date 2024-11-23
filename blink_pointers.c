@@ -2,7 +2,11 @@
 #include <util/delay.h>
 
 int main(void){
-    DDRB = DDRB | (1<<DDB5);
+    //DDRB = DDRB | (1<<DDB5);
+    //volatile uint8_t* portb = 0x24;
+    //*portb |= (1<<PORTB5);
+    *(volatile uint8_t*)0x24 |= (1<<PORTB5);
+
 
     while(1){
         PORTB |= (1<<PORTB5);

@@ -3,7 +3,8 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/ArduinoCore-avr/cores/arduino"
             ],
             "defines": [
                 "__AVR_ATmega328P__"
