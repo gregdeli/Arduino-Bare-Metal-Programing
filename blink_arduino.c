@@ -3,6 +3,8 @@
 #include <Arduino.h>
 
 int main(void){
+    init();
+
     DDRB = DDRB | (1<<DDB5);
 
     while(1){
