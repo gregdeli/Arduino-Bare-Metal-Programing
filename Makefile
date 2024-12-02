@@ -1,4 +1,4 @@
-TARGET = blink
+TARGET = blink_inter_ctc
 
 default:
 	avr-gcc -Os -DF_CPU=16000000UL -mmcu=atmega328p -c -o $(TARGET).o $(TARGET).c
