@@ -1,16 +1,16 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
-// #include <util/delay.h>
+#include <util/delay.h>
 
 #define F_CPU 16000000UL
 
 void confTimer1(uint16_t delay_ms);
 
 int main(void) {
-    DDRB |= (1 << DDB5);
+    // Digital pin 3
+    DDRD |= (1 << DDD2);
 
-    // Turn on LED
-    PORTB |= (1 << PORTB5);
+    PORTD |= (1 << PORTD2);
 
     sei(); // Enable global interrupts
 
@@ -19,10 +19,10 @@ int main(void) {
     confTimer1(delay_ms);
     
     // Do something else
-    // DDRD |= (1 << DDD2);
+    DDRD |= (1 << DDD3);
     while(1) {
-        // PORTD ^= (1 << PORTD2);
-        // _delay_ms(500);
+        PORTD ^= (1 << PORTD3);
+        _delay_ms(500);
     }
 
     return 0;
@@ -47,5 +47,5 @@ void confTimer1(uint16_t delay_ms) {
 
 
 ISR(TIMER1_COMPA_vect) {
-    PORTB ^= (1 << PORTB5); // Toggle LED
+    PORTD ^= (1 << PORTD2); // Toggle LED
 }
