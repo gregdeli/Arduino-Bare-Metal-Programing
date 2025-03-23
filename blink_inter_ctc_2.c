@@ -7,7 +7,7 @@
 void confTimer1(uint16_t delay_ms);
 
 int main(void) {
-    // Digital pin 3
+    // Digital pin 2
     DDRD |= (1 << DDD2);
 
     PORTD |= (1 << PORTD2);
@@ -19,6 +19,7 @@ int main(void) {
     confTimer1(delay_ms);
     
     // Do something else
+    // Digital pin 3
     DDRD |= (1 << DDD3);
     while(1) {
         PORTD ^= (1 << PORTD3);

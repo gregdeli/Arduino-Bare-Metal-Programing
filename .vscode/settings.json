@@ -1,6 +1,8 @@
 {
     "makefile.configureOnOpen": true,
     "files.associations": {
-        "delay.h": "c"
+        "delay.h": "c",
+        "interrupt.h": "c",
+        "io.h": "c"
     }
 }

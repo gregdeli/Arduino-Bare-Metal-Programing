@@ -1,6 +1,5 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
-// #include <util/delay.h>
 
 #define F_CPU 16000000UL
 
@@ -18,11 +17,8 @@ int main(void) {
 
     confTimer1(delay_ms);
     
-    // Do something else
-    // DDRD |= (1 << DDD2);
     while(1) {
-        // PORTD ^= (1 << PORTD2);
-        // _delay_ms(500);
+        // Do something else
     }
 
     return 0;
