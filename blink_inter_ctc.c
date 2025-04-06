@@ -25,19 +25,22 @@ int main(void) {
 }
 
 void confTimer1(uint16_t delay_ms) {
-    // Configure Timer1 in CTC mode
-    TCCR1B |= (1 << WGM12) | (1 << CS12) | (1 << CS10); // CTC mode, prescaler 1024
-
-    uint32_t ticks = (F_CPU / 1024 * delay_ms / 1000) - 1; // Calculate number of ticks for the delay
+    // Calculate the number of ticks needed for the delay.
+    uint32_t ticks = (F_CPU / 1024 * delay_ms / 1000) - 1;
     
     if (ticks > 0xFFFF) {
-        ticks = 0xFFFF; // Ensure ticks is within the 16-bit range
+        ticks = 0xFFFF; // Limit ticks to 16-bit range.
     }
 
-    OCR1AH = (ticks >> 8); // Load the high byte of the OCR1A register
-    OCR1AL = ticks; // Load the low byte of the OCR1A register
-    
-    TIMSK1 = (1 << OCIE1A); // Enable Timer1 compare match A interrupt
+    // Load the OCR1A register (high byte then low byte)
+    OCR1AH = (ticks >> 8);
+    OCR1AL = ticks;
+
+    // Configure Timer1 in CTC mode, prescaler 1024.
+    TCCR1B |= (1 << WGM12) | (1 << CS12) | (1 << CS10);
+
+    // Enable Timer1 compare match A interrupt.
+    TIMSK1 = (1 << OCIE1A);
 }
 
 
