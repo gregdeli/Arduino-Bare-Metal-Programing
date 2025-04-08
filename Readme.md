@@ -26,4 +26,4 @@ The rules are:
 
 
 ## Presentation
-The slides presented at the Upatras ACM Student Chapter are loceted in: **Presentation/Arduino Bare Metal Programming.pdf**
+The slides presented at the Upatras ACM Student Chapter are located in: **Presentation/Arduino Bare Metal Programming.pdf**
